@@ -101,10 +101,7 @@
         "dates": "March 2022 - Present",
         "type": "Full Time",
         "position": "Frontend Engineer at X",
-        "bullets": [
-          "Worked on the frontend of a React application",
-          "Worked on the frontend of a React application"
-        ]
+        "bullets": ["Worked on the frontend of a React application", "Worked on the frontend of a React application"]
       },
       {
         "id": "2",

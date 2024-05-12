@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useState } from 'react'
 
-const ProjectResume = ({ dates, type, position, bullets }) => {
-  const [bulletsLocal, setBulletsLocal] = React.useState(bullets.split(","));
+interface ProjectResumeProps {
+  dates: string
+  type: string
+  position: string
+  bullets: string
+}
+
+const ProjectResume: React.FC<ProjectResumeProps> = ({ dates, type, position, bullets }) => {
+  const bulletsLocal = bullets.split(',')
 
   return (
     <div className="mt-5 w-full flex mob:flex-col desktop:flex-row justify-between">
@@ -22,7 +29,7 @@ const ProjectResume = ({ dates, type, position, bullets }) => {
         )}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ProjectResume;
+export default ProjectResume
