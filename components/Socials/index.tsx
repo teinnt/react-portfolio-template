@@ -4,7 +4,7 @@ import Button from '../Button'
 import yourData from '../../data/portfolio.json'
 
 interface SocialsProps {
-  className?: string;
+  className?: string
 }
 
 const Socials: React.FC<SocialsProps> = ({ className }) => {

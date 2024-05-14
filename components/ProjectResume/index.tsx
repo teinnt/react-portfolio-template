@@ -7,7 +7,12 @@ interface ProjectResumeProps {
   bullets: string
 }
 
-const ProjectResume: React.FC<ProjectResumeProps> = ({ dates, type, position, bullets }) => {
+const ProjectResume: React.FC<ProjectResumeProps> = ({
+  dates,
+  type,
+  position,
+  bullets,
+}) => {
   const bulletsLocal = bullets.split(',')
 
   return (

@@ -15,7 +15,10 @@ export function handler(req: NextApiRequest, res: NextApiResponse) {
         res.status(500).json({ status: 'ERROR', message: err.message })
       }
     } else {
-      res.status(405).json({ name: 'Method Not Allowed', message: 'This route works in development mode only' })
+      res.status(405).json({
+        name: 'Method Not Allowed',
+        message: 'This route works in development mode only',
+      })
     }
   } else {
     res.status(403).json({ name: 'Forbidden', message: 'Access denied' })

@@ -1,39 +1,39 @@
-import React, { useState } from "react";
-import Button from "../components/Button";
-import Header from "../components/Header";
-import { v4 as uuidv4 } from "uuid";
-import { useTheme } from "next-themes";
+import React, { useState } from 'react'
+import Button from '../components/Button'
+import Header from '../components/Header'
+import { v4 as uuidv4 } from 'uuid'
+import { useTheme } from 'next-themes'
 
 // Data
-import yourData from "../data/portfolio.json";
-import Cursor from "../components/Cursor";
+import yourData from '../data/portfolio.json'
+import Cursor from '../components/Cursor'
 
 const Edit = () => {
   // states
-  const [data, setData] = useState(yourData);
-  const [currentTabs, setCurrentTabs] = useState("HEADER");
-  const { theme } = useTheme();
+  const [data, setData] = useState(yourData)
+  const [currentTabs, setCurrentTabs] = useState('HEADER')
+  const { theme } = useTheme()
 
   const saveData = () => {
-    if (process.env.NODE_ENV === "development") {
-      fetch("/api/portfolio", {
-        method: "POST",
+    if (process.env.NODE_ENV === 'development') {
+      fetch('/api/portfolio', {
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify(data),
-      });
+      })
     } else {
-      alert("This thing only works in development mode.");
+      alert('This thing only works in development mode.')
     }
-  };
+  }
 
   // Project Handler
   const editProjects = (projectIndex, editProject) => {
-    let copyProjects = data.projects;
-    copyProjects[projectIndex] = { ...editProject };
-    setData({ ...data, projects: copyProjects });
-  };
+    let copyProjects = data.projects
+    copyProjects[projectIndex] = { ...editProject }
+    setData({ ...data, projects: copyProjects })
+  }
 
   const addProject = () => {
     setData({
@@ -42,30 +42,30 @@ const Edit = () => {
         ...data.projects,
         {
           id: uuidv4(),
-          title: "New Project",
-          description: "Web Design & Development",
+          title: 'New Project',
+          description: 'Web Design & Development',
           imageSrc:
-            "https://images.unsplash.com/photo-1517479149777-5f3b1511d5ad?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTAyfHxwYXN0ZWx8ZW58MHx8MHw%3D&auto=format&fit=crop&w=400&q=60",
+            'https://images.unsplash.com/photo-1517479149777-5f3b1511d5ad?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTAyfHxwYXN0ZWx8ZW58MHx8MHw%3D&auto=format&fit=crop&w=400&q=60',
 
-          url: "http://chetanverma.com/",
+          url: 'http://chetanverma.com/',
         },
       ],
-    });
-  };
+    })
+  }
 
   const deleteProject = (id) => {
-    const copyProjects = data.projects;
-    copyProjects = copyProjects.filter((project) => project.id !== id);
-    setData({ ...data, projects: copyProjects });
-  };
+    let copyProjects = data.projects
+    copyProjects = copyProjects.filter((project) => project.id !== id)
+    setData({ ...data, projects: copyProjects })
+  }
 
   // Services Handler
 
   const editServices = (serviceIndex, editService) => {
-    let copyServices = data.services;
-    copyServices[serviceIndex] = { ...editService };
-    setData({ ...data, services: copyServices });
-  };
+    var copyServices = data.services
+    copyServices[serviceIndex] = { ...editService }
+    setData({ ...data, services: copyServices })
+  }
 
   const addService = () => {
     setData({
@@ -74,27 +74,27 @@ const Edit = () => {
         ...data.services,
         {
           id: uuidv4(),
-          title: "New Service",
+          title: 'New Service',
           description:
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
+            'Lorem Ipsum is simply dummy text of the printing and typesetting industry. ',
         },
       ],
-    });
-  };
+    })
+  }
 
   const deleteService = (id) => {
-    const copyServices = data.services;
-    copyServices = copyServices.filter((service) => service.id !== id);
-    setData({ ...data, services: copyServices });
-  };
+    var copyServices = data.services
+    copyServices = copyServices.filter((service) => service.id !== id)
+    setData({ ...data, services: copyServices })
+  }
 
   // Socials Handler
 
   const editSocials = (socialIndex, editSocial) => {
-    let copySocials = data.socials;
-    copySocials[socialIndex] = { ...editSocial };
-    setData({ ...data, socials: copySocials });
-  };
+    let copySocials = data.socials
+    copySocials[socialIndex] = { ...editSocial }
+    setData({ ...data, socials: copySocials })
+  }
 
   const addSocials = () => {
     setData({
@@ -103,18 +103,18 @@ const Edit = () => {
         ...data.socials,
         {
           id: uuidv4(),
-          title: "New Link",
-          link: "www.chetanverma.com",
+          title: 'New Link',
+          link: 'www.chetanverma.com',
         },
       ],
-    });
-  };
+    })
+  }
 
   const deleteSocials = (id) => {
-    const copySocials = data.socials;
-    copySocials = copySocials.filter((social) => social.id !== id);
-    setData({ ...data, socials: copySocials });
-  };
+    var copySocials = data.socials
+    copySocials = copySocials.filter((social) => social.id !== id)
+    setData({ ...data, socials: copySocials })
+  }
 
   // Resume
 
@@ -127,31 +127,31 @@ const Edit = () => {
           ...data.resume.experiences,
           {
             id: uuidv4(),
-            dates: "Enter Dates",
-            type: "Full Time",
-            position: "Frontend Engineer at X",
-            bullets: ["Worked on the frontend of a React application"],
+            dates: 'Enter Dates',
+            type: 'Full Time',
+            position: 'Frontend Engineer at X',
+            bullets: 'Worked on the frontend of a React application',
           },
         ],
       },
-    });
-  };
+    })
+  }
 
   const handleEditExperiences = (index, editExperience) => {
-    let copyExperiences = data.resume.experiences;
-    copyExperiences[index] = { ...editExperience };
+    let copyExperiences = data.resume.experiences
+    copyExperiences[index] = { ...editExperience }
     setData({
       ...data,
       resume: { ...data.resume, experiences: copyExperiences },
-    });
-  };
+    })
+  }
 
   return (
-    <div className={`container mx-auto ${data.showCursor && "cursor-none"}`}>
+    <div className={`container mx-auto ${data.showCursor && 'cursor-none'}`}>
       <Header isBlog></Header>
       {data.showCursor && <Cursor />}
       <div className="mt-10">
-        <div className={`${theme === "dark" ? "bg-transparent" : "bg-white"}`}>
+        <div className={`${theme === 'dark' ? 'bg-transparent' : 'bg-white'}`}>
           <div className="flex items-center justify-between">
             <h1 className="text-4xl">Dashboard</h1>
             <div className="flex items-center">
@@ -163,45 +163,45 @@ const Edit = () => {
 
           <div className="flex items-center">
             <Button
-              onClick={() => setCurrentTabs("HEADER")}
-              type={currentTabs === "HEADER" && "primary"}
+              onClick={() => setCurrentTabs('HEADER')}
+              type={currentTabs === 'HEADER' ? 'primary' : 'secondary'}
             >
               Header
             </Button>
             <Button
-              onClick={() => setCurrentTabs("PROJECTS")}
-              type={currentTabs === "PROJECTS" && "primary"}
+              onClick={() => setCurrentTabs('PROJECTS')}
+              type={currentTabs === 'PROJECTS' ? 'primary' : 'secondary'}
             >
               Projects
             </Button>
             <Button
-              onClick={() => setCurrentTabs("SERVICES")}
-              type={currentTabs === "SERVICES" && "primary"}
+              onClick={() => setCurrentTabs('SERVICES')}
+              type={currentTabs === 'SERVICES' ? 'primary' : 'secondary'}
             >
               Services
             </Button>
             <Button
-              onClick={() => setCurrentTabs("ABOUT")}
-              type={currentTabs === "ABOUT" && "primary"}
+              onClick={() => setCurrentTabs('ABOUT')}
+              type={currentTabs === 'ABOUT' ? 'primary' : 'secondary'}
             >
               About
             </Button>
             <Button
-              onClick={() => setCurrentTabs("SOCIAL")}
-              type={currentTabs === "SOCIAL" && "primary"}
+              onClick={() => setCurrentTabs('SOCIAL')}
+              type={currentTabs === 'SOCIAL' ? 'primary' : 'secondary'}
             >
               Social
             </Button>
             <Button
-              onClick={() => setCurrentTabs("RESUME")}
-              type={currentTabs === "RESUME" && "primary"}
+              onClick={() => setCurrentTabs('RESUME')}
+              type={currentTabs === 'RESUME' ? 'primary' : 'secondary'}
             >
               Resume
             </Button>
           </div>
         </div>
         {/* HEADER */}
-        {currentTabs === "HEADER" && (
+        {currentTabs === 'HEADER' && (
           <div className="mt-10">
             <div className="flex items-center">
               <label className="w-1/5 text-lg opacity-50">Name</label>
@@ -269,14 +269,16 @@ const Edit = () => {
               <div className="w-4/5 ml-10 flex items-center">
                 <Button
                   onClick={() => setData({ ...data, showBlog: true })}
-                  type={data.showBlog && "primary"}
+                  type={data.showBlog ? 'primary' : 'secondary'}
                 >
                   Yes
                 </Button>
                 <Button
                   onClick={() => setData({ ...data, showBlog: false })}
                   classes={
-                    !data.showBlog && "bg-red-500 text-white hover:bg-red-600"
+                    !data.showBlog
+                      ? 'bg-red-500 text-white hover:bg-red-600'
+                      : ''
                   }
                 >
                   No
@@ -288,14 +290,16 @@ const Edit = () => {
               <div className="w-4/5 ml-10 flex items-center">
                 <Button
                   onClick={() => setData({ ...data, darkMode: true })}
-                  type={data.darkMode && "primary"}
+                  type={data.darkMode ? 'primary' : 'secondary'}
                 >
                   Yes
                 </Button>
                 <Button
                   onClick={() => setData({ ...data, darkMode: false })}
                   classes={
-                    !data.darkMode && "bg-red-500 text-white hover:bg-red-600"
+                    !data.darkMode
+                      ? 'bg-red-500 text-white hover:bg-red-600'
+                      : ''
                   }
                 >
                   No
@@ -307,14 +311,16 @@ const Edit = () => {
               <div className="w-4/5 ml-10 flex items-center">
                 <Button
                   onClick={() => setData({ ...data, showResume: true })}
-                  type={data.showResume && "primary"}
+                  type={data.showResume ? 'primary' : 'secondary'}
                 >
                   Yes
                 </Button>
                 <Button
                   onClick={() => setData({ ...data, showResume: false })}
                   classes={
-                    !data.showResume && "bg-red-500 text-white hover:bg-red-600"
+                    !data.showResume
+                      ? 'bg-red-500 text-white hover:bg-red-600'
+                      : ''
                   }
                 >
                   No
@@ -326,14 +332,16 @@ const Edit = () => {
               <div className="w-4/5 ml-10 flex items-center">
                 <Button
                   onClick={() => setData({ ...data, showCursor: true })}
-                  type={data.showCursor && "primary"}
+                  type={data.showCursor ? 'primary' : 'secondary'}
                 >
                   Yes
                 </Button>
                 <Button
                   onClick={() => setData({ ...data, showCursor: false })}
                   classes={
-                    !data.showCursor && "bg-red-500 text-white hover:bg-red-600"
+                    !data.showCursor
+                      ? 'bg-red-500 text-white hover:bg-red-600'
+                      : ''
                   }
                 >
                   No
@@ -343,7 +351,7 @@ const Edit = () => {
           </div>
         )}
         {/* PROJECTS */}
-        {currentTabs === "PROJECTS" && (
+        {currentTabs === 'PROJECTS' && (
           <>
             <div className="mt-10">
               {data.projects.map((project, index) => (
@@ -431,7 +439,7 @@ const Edit = () => {
           </>
         )}
         {/* SERVICES */}
-        {currentTabs === "SERVICES" && (
+        {currentTabs === 'SERVICES' && (
           <>
             <div className="mt-10">
               {data.services.map((service, index) => (
@@ -485,7 +493,7 @@ const Edit = () => {
             </div>
           </>
         )}
-        {currentTabs === "ABOUT" && (
+        {currentTabs === 'ABOUT' && (
           <div className="mt-10">
             <h1 className="text-2xl">About</h1>
             <textarea
@@ -495,7 +503,7 @@ const Edit = () => {
             ></textarea>
           </div>
         )}
-        {currentTabs === "SOCIAL" && (
+        {currentTabs === 'SOCIAL' && (
           <div className="mt-10">
             {data.socials.map((social, index) => (
               <>
@@ -548,7 +556,7 @@ const Edit = () => {
             </div>
           </div>
         )}
-        {currentTabs === "RESUME" && (
+        {currentTabs === 'RESUME' && (
           <div className="mt-10">
             <h1>Main</h1>
             <div className="mt-5 flex items-center">
@@ -745,7 +753,7 @@ const Edit = () => {
                                 ...data.resume.languages.slice(index + 1),
                               ],
                             },
-                          });
+                          })
                         }}
                         className="w-full p-2 rounded-md shadow-lg border-2"
                         type="text"
@@ -775,7 +783,7 @@ const Edit = () => {
                         ...data,
                         resume: {
                           ...data.resume,
-                          languages: [...data.resume.languages, "Added"],
+                          languages: [...data.resume.languages, 'Added'],
                         },
                       })
                     }
@@ -803,7 +811,7 @@ const Edit = () => {
                                 ...data.resume.frameworks.slice(index + 1),
                               ],
                             },
-                          });
+                          })
                         }}
                         className="w-full p-2 rounded-md shadow-lg border-2"
                         type="text"
@@ -831,7 +839,7 @@ const Edit = () => {
                         ...data,
                         resume: {
                           ...data.resume,
-                          frameworks: [...data.resume.frameworks, "Added"],
+                          frameworks: [...data.resume.frameworks, 'Added'],
                         },
                       })
                     }
@@ -861,7 +869,7 @@ const Edit = () => {
                                 ...data.resume.others.slice(index + 1),
                               ],
                             },
-                          });
+                          })
                         }}
                         className="w-full p-2 rounded-md shadow-lg border-2"
                         type="text"
@@ -889,7 +897,7 @@ const Edit = () => {
                         ...data,
                         resume: {
                           ...data.resume,
-                          others: [...data.resume.others, "Added"],
+                          others: [...data.resume.others, 'Added'],
                         },
                       })
                     }
@@ -905,7 +913,7 @@ const Edit = () => {
         )}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Edit;
+export default Edit

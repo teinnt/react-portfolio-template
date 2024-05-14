@@ -1,13 +1,20 @@
 import { useLayoutEffect, useEffect } from 'react'
 
 // Proper type for isomorphic use of layout effects
-export const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect
+export const useIsomorphicLayoutEffect =
+  typeof window !== 'undefined' ? useLayoutEffect : useEffect
 
 // Function to convert ISO date string to a more readable format
 export function ISOToDate(date: string): string {
   if (date) {
     let convertDate = new Date(date)
-    return convertDate.getFullYear() + '-' + (convertDate.getMonth() + 1) + '-' + convertDate.getDate()
+    return (
+      convertDate.getFullYear() +
+      '-' +
+      (convertDate.getMonth() + 1) +
+      '-' +
+      convertDate.getDate()
+    )
   }
   return ''
 }

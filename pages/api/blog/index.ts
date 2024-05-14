@@ -31,7 +31,10 @@ export function handler(req: NextApiRequest, res: NextApiResponse) {
       writeFile(postsFolder, data, 'utf8', (err) => {
         if (err) {
           console.error(err)
-          res.status(500).json({ status: 'ERROR', message: err.message })
+          res.status(500).json({
+            status: 'ERROR',
+            message: err.message,
+          })
           return
         }
         res.status(200).json({ status: 'CREATED' })

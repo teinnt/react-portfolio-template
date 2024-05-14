@@ -100,14 +100,24 @@ const BlogEditor: React.FC<BlogEditorProps> = ({ post, close, refresh }) => {
               <DatePicker
                 selected={new Date(blogVariables.date ?? '')}
                 className="w-full mt-2 p-4 hover:border-blue-400 rounded-md shadow-lg border-2"
-                onChange={(date) => setBlogVariables({ ...blogVariables, date: date?.toISOString() || '' })}
+                onChange={(date) =>
+                  setBlogVariables({
+                    ...blogVariables,
+                    date: date?.toISOString() || '',
+                  })
+                }
               />
             </div>
             <div className="mt-5 flex flex-col items-center">
               <label className="w-full text-sx opacity-50">Title</label>
               <input
                 value={blogVariables.title}
-                onChange={(e) => setBlogVariables({ ...blogVariables, title: e.target.value })}
+                onChange={(e) =>
+                  setBlogVariables({
+                    ...blogVariables,
+                    title: e.target.value,
+                  })
+                }
                 className="w-full mt-2 p-4 hover:border-blue-400 rounded-md shadow-lg border-2"
                 type="text"
               />
@@ -116,7 +126,12 @@ const BlogEditor: React.FC<BlogEditorProps> = ({ post, close, refresh }) => {
               <label className="w-full text-sx opacity-50">Tagline</label>
               <input
                 value={blogVariables.tagline}
-                onChange={(e) => setBlogVariables({ ...blogVariables, tagline: e.target.value })}
+                onChange={(e) =>
+                  setBlogVariables({
+                    ...blogVariables,
+                    tagline: e.target.value,
+                  })
+                }
                 className="w-full mt-2 p-4 hover:border-blue-400 rounded-md shadow-lg border-2"
                 type="text"
               />
@@ -125,7 +140,12 @@ const BlogEditor: React.FC<BlogEditorProps> = ({ post, close, refresh }) => {
               <label className="w-full text-sx opacity-50">Preview (SEO)</label>
               <TextareaAutosize
                 value={blogVariables.preview}
-                onChange={(e) => setBlogVariables({ ...blogVariables, preview: e.target.value })}
+                onChange={(e) =>
+                  setBlogVariables({
+                    ...blogVariables,
+                    preview: e.target.value,
+                  })
+                }
                 className="w-full mt-2 p-4 hover:border-blue-400 rounded-md shadow-lg border-2"
               />
             </div>
@@ -133,7 +153,12 @@ const BlogEditor: React.FC<BlogEditorProps> = ({ post, close, refresh }) => {
               <label className="w-full text-sx opacity-50">Image</label>
               <input
                 value={blogVariables.image}
-                onChange={(e) => setBlogVariables({ ...blogVariables, image: e.target.value })}
+                onChange={(e) =>
+                  setBlogVariables({
+                    ...blogVariables,
+                    image: e.target.value,
+                  })
+                }
                 className="w-full mt-2 p-4 hover:border-blue-400 rounded-md shadow-lg border-2"
                 type="text"
               />
