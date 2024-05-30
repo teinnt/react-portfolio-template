@@ -1,30 +1,34 @@
 import React, { useEffect, useState, FC } from 'react'
 import { useRouter } from 'next/router'
-import { useTheme } from 'next-themes'
 import { Popover } from '@headlessui/react'
 import Button from '../Button'
 import data from '../../data/portfolio.json'
 
+const productPopups = [
+  {
+    name: '1',
+    url: '/product/1',
+  },
+  {
+    name: '2',
+    url: '/product/2',
+  },
+]
+
 interface HeaderProps {
-  handleWorkScroll?: () => void
   handleAboutScroll?: () => void
+  handleContactScroll?: () => void
   isBlog: boolean
 }
 
 const Header: FC<HeaderProps> = ({
-  handleWorkScroll,
   handleAboutScroll,
+  handleContactScroll,
   isBlog,
 }) => {
   const router = useRouter()
-  const { theme, setTheme } = useTheme()
-  const [mounted, setMounted] = useState(false)
-
+  const [languague, setLanguague] = useState<'VN' | 'EN'>('EN')
   const { name, showBlog, showResume } = data
-
-  useEffect(() => {
-    setMounted(true)
-  }, [])
 
   return (
     <>
@@ -42,78 +46,30 @@ const Header: FC<HeaderProps> = ({
                 {data.darkMode && (
                   <Button
                     onClick={() =>
-                      setTheme(theme === 'dark' ? 'light' : 'dark')
+                      setLanguague(languague === 'VN' ? 'EN' : 'VN')
                     }
                   >
-                    <img
-                      className="h-6"
-                      src={`/images/${theme === 'dark' ? 'moon.svg' : 'sun.svg'}`}
-                      alt="Toggle Theme"
-                    />
+                    {languague}
                   </Button>
                 )}
                 <Popover.Button>
                   <img
                     className="h-5"
-                    src={`/images/${
-                      !open
-                        ? theme === 'dark'
-                          ? 'menu-white.svg'
-                          : 'menu.svg'
-                        : theme === 'light'
-                          ? 'cancel.svg'
-                          : 'cancel-white.svg'
-                    }`}
+                    src={`/images/${!open ? 'cancel.svg' : 'cancel-white.svg'}`}
                     alt="Menu Button"
                   />
                 </Popover.Button>
               </div>
             </div>
             <Popover.Panel
-              className={`absolute right-0 z-10 w-11/12 p-4 ${
-                theme === 'dark' ? 'bg-slate-800' : 'bg-white'
-              } shadow-md rounded-md`}
-            >
-              {!isBlog ? (
-                <div className="grid grid-cols-1">
-                  <Button onClick={handleWorkScroll}>Work</Button>
-                  <Button onClick={handleAboutScroll}>About</Button>
-                  {showBlog && (
-                    <Button onClick={() => router.push('/blog')}>Blog</Button>
-                  )}
-                  {showResume && (
-                    <Button onClick={() => window.open('mailto:YOUR_EMAIL')}>
-                      Resume
-                    </Button>
-                  )}
-                  <Button onClick={() => window.open('mailto:YOUR_EMAIL')}>
-                    Contact
-                  </Button>
-                </div>
-              ) : (
-                <div className="grid grid-cols-1">
-                  <Button onClick={() => router.push('/')}>Home</Button>
-                  {showBlog && (
-                    <Button onClick={() => router.push('/blog')}>Blog</Button>
-                  )}
-                  {showResume && (
-                    <Button onClick={() => router.push('/resume')}>
-                      Resume
-                    </Button>
-                  )}
-                  <Button onClick={() => window.open('mailto:YOUR_EMAIL')}>
-                    Contact
-                  </Button>
-                </div>
-              )}
-            </Popover.Panel>
+              className={`absolute right-0 z-10 w-11/12 p-4 ${'bg-white'} shadow-md rounded-md`}
+            ></Popover.Panel>
           </>
         )}
       </Popover>
       <div
-        className={`mt-10 hidden flex-row items-center justify-between sticky ${
-          theme === 'light' ? 'bg-white' : ''
-        } dark:text-white top-0 z-10 tablet:flex`}
+        className={`mt-10 hidden flex-row items-center justify-between sticky dark:text-white top-0 z-10 tablet:flex`}
+        style={{ width: '100vw', paddingInline: '5%' }}
       >
         <h1
           onClick={() => router.push('/')}
@@ -121,56 +77,42 @@ const Header: FC<HeaderProps> = ({
         >
           {name}.
         </h1>
-        {!isBlog ? (
-          <div className="flex">
-            <Button onClick={handleWorkScroll}>Work</Button>
-            <Button onClick={handleAboutScroll}>About</Button>
-            {showBlog && (
-              <Button onClick={() => router.push('/blog')}>Blog</Button>
-            )}
-            {showResume && (
-              <Button onClick={() => router.push('/resume')}>Resume</Button>
-            )}
-            <Button onClick={() => window.open('mailto:YOUR_EMAIL')}>
-              Contact
-            </Button>
-            {mounted && theme && data.darkMode && (
-              <Button
-                onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-              >
-                <img
-                  className="h-6"
-                  src={`/images/${theme === 'dark' ? 'moon.svg' : 'sun.svg'}`}
-                  alt="Theme Icon"
-                />
-              </Button>
-            )}
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+          }}
+        >
+          <div style={{ marginInline: '1em' }}>
+            <Popover>
+              <Popover.Button>Product</Popover.Button>
+
+              <Popover.Panel className="absolute z-10">
+                <div
+                  style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '10px',
+                    padding: '10px',
+                  }}
+                >
+                  <a href="/product/one">Product One</a>
+                  <a href="/product/two">Product Two</a>
+                </div>
+              </Popover.Panel>
+            </Popover>
           </div>
-        ) : (
-          <div className="flex">
-            <Button onClick={() => router.push('/')}>Home</Button>
-            {showBlog && (
-              <Button onClick={() => router.push('/blog')}>Blog</Button>
-            )}
-            {showResume && (
-              <Button onClick={() => router.push('/resume')}>Resume</Button>
-            )}
-            <Button onClick={() => window.open('mailto:YOUR_EMAIL')}>
-              Contact
-            </Button>
-            {mounted && theme && data.darkMode && (
-              <Button
-                onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-              >
-                <img
-                  className="h-6"
-                  src={`/images/${theme === 'dark' ? 'moon.svg' : 'sun.svg'}`}
-                  alt="Theme Icon"
-                />
-              </Button>
-            )}
-          </div>
-        )}
+
+          <Button onClick={() => router.push('/blog')}>Blog</Button>
+
+          <Button onClick={handleAboutScroll}>About</Button>
+          <Button onClick={handleContactScroll}>Contact</Button>
+          <Button
+            onClick={() => setLanguague(languague === 'VN' ? 'EN' : 'VN')}
+          >
+            <div className="h-6">{languague}</div>
+          </Button>
+        </div>
       </div>
     </>
   )

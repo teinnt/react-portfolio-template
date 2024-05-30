@@ -1,13 +1,13 @@
 import React, { MouseEventHandler } from 'react'
 
-interface WorkCardProps {
+interface ProductCardProps {
   img: string
   name?: string
   description?: string
   onClick?: MouseEventHandler<HTMLDivElement>
 }
 
-const WorkCard: React.FC<WorkCardProps> = ({
+const ProductCard: React.FC<ProductCardProps> = ({
   img,
   name,
   description,
@@ -34,4 +34,4 @@ const WorkCard: React.FC<WorkCardProps> = ({
   )
 }
 
-export default WorkCard
+export default ProductCard

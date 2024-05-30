@@ -130,7 +130,7 @@ const Edit = () => {
             dates: 'Enter Dates',
             type: 'Full Time',
             position: 'Frontend Engineer at X',
-            bullets: 'Worked on the frontend of a React application',
+            bullets: 'Producted on the frontend of a React application',
           },
         ],
       },
@@ -503,59 +503,6 @@ const Edit = () => {
             ></textarea>
           </div>
         )}
-        {currentTabs === 'SOCIAL' && (
-          <div className="mt-10">
-            {data.socials.map((social, index) => (
-              <>
-                <div key={social.id}>
-                  <div className="flex items-center justify-between">
-                    <h1 className="text-2xl">{social.title}</h1>
-                    <Button
-                      onClick={() => deleteSocials(social.id)}
-                      type="primary"
-                    >
-                      Delete
-                    </Button>
-                  </div>
-                  <div className="flex items-center mt-5">
-                    <label className="w-1/5 text-lg opacity-50">Title</label>
-                    <input
-                      value={social.title}
-                      onChange={(e) =>
-                        editSocials(index, {
-                          ...social,
-                          title: e.target.value,
-                        })
-                      }
-                      className="w-4/5 ml-10 p-2 rounded-md shadow-lg border-2"
-                      type="text"
-                    ></input>
-                  </div>
-                  <div className="flex items-center mt-5">
-                    <label className="w-1/5 text-lg opacity-50">Link</label>
-                    <input
-                      value={social.link}
-                      onChange={(e) =>
-                        editSocials(index, {
-                          ...social,
-                          link: e.target.value,
-                        })
-                      }
-                      className="w-4/5 ml-10 p-2 rounded-md shadow-lg border-2"
-                      type="text"
-                    />
-                  </div>
-                  <hr className="my-10"></hr>
-                </div>
-              </>
-            ))}
-            <div className="my-10">
-              <Button onClick={addSocials} type="primary">
-                Add Social +
-              </Button>
-            </div>
-          </div>
-        )}
         {currentTabs === 'RESUME' && (
           <div className="mt-10">
             <h1>Main</h1>
@@ -794,21 +741,23 @@ const Edit = () => {
               </div>
               <hr className="my-10"></hr>
               <div className="flex">
-                <label className="w-1/5 text-lg opacity-50">Frameworks</label>
+                <label className="w-1/5 text-lg opacity-50">
+                  FrameProducts
+                </label>
                 <div className="w-4/5 ml-10 flex flex-col">
-                  {data.resume.frameworks.map((framework, index) => (
+                  {data.resume.frameProducts.map((frameProduct, index) => (
                     <div key={index} className="flex">
                       <input
-                        value={framework}
+                        value={frameProduct}
                         onChange={(e) => {
                           setData({
                             ...data,
                             resume: {
                               ...data.resume,
-                              frameworks: [
-                                ...data.resume.frameworks.slice(0, index),
+                              frameProducts: [
+                                ...data.resume.frameProducts.slice(0, index),
                                 e.target.value,
-                                ...data.resume.frameworks.slice(index + 1),
+                                ...data.resume.frameProducts.slice(index + 1),
                               ],
                             },
                           })
@@ -822,7 +771,7 @@ const Edit = () => {
                             ...data,
                             resume: {
                               ...data.resume,
-                              frameworks: data.resume.frameworks.filter(
+                              frameProducts: data.resume.frameProducts.filter(
                                 (value, i) => index !== i
                               ),
                             },
@@ -839,7 +788,10 @@ const Edit = () => {
                         ...data,
                         resume: {
                           ...data.resume,
-                          frameworks: [...data.resume.frameworks, 'Added'],
+                          frameProducts: [
+                            ...data.resume.frameProducts,
+                            'Added',
+                          ],
                         },
                       })
                     }

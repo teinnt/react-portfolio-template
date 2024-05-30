@@ -14,7 +14,7 @@
 ## Sections
 
 - Header
-- Work
+- Product
 - Services
 - About
 - Contact

@@ -1,19 +1,14 @@
 {
-  "name": "YOUR_NAME",
-  "headerTaglineOne": "Hello 👋",
-  "headerTaglineTwo": "I'm YOUR_FULL_NAME - YOUR_PERSONALITY",
-  "headerTaglineThree": "YOUR_TITLE",
-  "headerTaglineFour": " based in YOUR_LOCATION.",
+  "name": "Chau Duong Company",
+  "headerTaglineOne": "",
+  "headerTaglineTwo": "",
+  "headerTaglineThree": "",
+  "headerTaglineFour": "",
   "showCursor": true,
   "showBlog": true,
   "darkMode": true,
   "showResume": true,
   "socials": [
-    {
-      "id": "1",
-      "title": "Github",
-      "link": "https://github.com/YOUR_GITHUB_NAME"
-    },
     {
       "id": "2",
       "title": "LinkedIn",
@@ -24,7 +19,6 @@
       "title": "Twitter",
       "link": "https://twitter.com/YOUR_TWITTER_NAME"
     },
-    { "id": "4", "title": "Blog", "link": "YOUR_BLOG_LINK" },
     { "id": "5", "title": "Email", "link": "mailto:YOUR_EMAIL" }
   ],
   "projects": [
@@ -93,10 +87,10 @@
       "description": "We combine creative design and technical skills to build striking 3D visualisations that bring your project to life."
     }
   ],
-  "aboutpara": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+  "aboutpara": "Welcome to our sustainable packaging journey!",
   "resume": {
     "tagline": "👋  I'm a software engineer, product designer.",
-    "description": "I have delivered world-class user experiences to millions of people. Well-versed with React, Javascript, and most of the Web frameworks.",
+    "description": "I have delivered world-class user experiences to millions of people. Well-versed with React, Javascript, and most of the Web frameProducts.",
     "experiences": [
       {
         "id": "1",
@@ -110,7 +104,7 @@
         "dates": "July 2020 - March 2022",
         "type": "Full Time",
         "position": "Frontend Engineer at X",
-        "bullets": "Worked on the frontend of a React application, Worked on the frontend of a React application"
+        "bullets": "Worked on the frontend of a React application, Producted on the frontend of a React application"
       }
     ],
     "education": {
@@ -119,7 +113,7 @@
       "universityPara": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
     },
     "languages": ["Javascript", "HTML5", "CSS", "Python", "Go"],
-    "frameworks": ["React", "Typescript", "NodeJs"],
+    "frameProducts": ["React", "Typescript", "NodeJs"],
     "others": ["Figma", "AdobeXD", "AWS"]
   }
 }
