@@ -5,6 +5,30 @@ import { Popover } from '@headlessui/react'
 import Button from '../Button'
 import data from '../../data/portfolio.json'
 
+type CourseSection = {
+  title: string
+  link: string
+}
+
+export const coursesSections: CourseSection[] = [
+  {
+    title: 'Love',
+    link: '/blog/love',
+  },
+  {
+    title: 'Money',
+    link: '/blog/money',
+  },
+  {
+    title: 'Mental Healh',
+    link: '/blog/mental-health',
+  },
+  {
+    title: 'Physical Health',
+    link: '/blog/physical-health',
+  },
+]
+
 interface HeaderProps {
   handleWorkScroll?: () => void
   handleAboutScroll?: () => void
@@ -25,6 +49,33 @@ const Header: FC<HeaderProps> = ({
   useEffect(() => {
     setMounted(true)
   }, [])
+
+  const renderPopup = (title: string, sections: CourseSection[]) => {
+    return (
+      <Popover style={{ display: 'flex', alignItems: 'center' }}>
+        <Popover.Button className={`text-sm tablet:text-base p-1 laptop:p-2 m-1 laptop:m-2 rounded-lg transition-all duration-300 ease-out first:ml-0 hover:scale-105 active:scale-100 link ${
+          data.showCursor ? 'cursor-none' : ''} flex items-center ${theme === 'dark' ? 'hover:bg-slate-600 text-white' : 'hover:bg-slate-100'}`}>
+          {title}
+        </Popover.Button>
+
+        <Popover.Panel className="absolute z-10">
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              marginTop: '16em',
+            }}
+          >
+            {sections.map((a) => (
+              <a href={a.link}>
+                <Button>{a.title}</Button>
+              </a>
+            ))}
+          </div>
+        </Popover.Panel>
+      </Popover>
+    )
+  }
 
   return (
     <>
@@ -76,8 +127,10 @@ const Header: FC<HeaderProps> = ({
             >
               {!isBlog ? (
                 <div className="grid grid-cols-1">
-                  <Button onClick={handleWorkScroll}>Work</Button>
                   <Button onClick={handleAboutScroll}>About</Button>
+
+                  {renderPopup('Courses', coursesSections)}
+
                   {showBlog && (
                     <Button onClick={() => router.push('/blog')}>Blog</Button>
                   )}
@@ -86,13 +139,14 @@ const Header: FC<HeaderProps> = ({
                       Resume
                     </Button>
                   )}
-                  <Button onClick={() => window.open('mailto:YOUR_EMAIL')}>
-                    Contact
-                  </Button>
+                  <Button onClick={() => router.push('auth')}>Login</Button>
                 </div>
               ) : (
                 <div className="grid grid-cols-1">
                   <Button onClick={() => router.push('/')}>Home</Button>
+
+                  {renderPopup('Courses', coursesSections)}
+
                   {showBlog && (
                     <Button onClick={() => router.push('/blog')}>Blog</Button>
                   )}
@@ -101,9 +155,7 @@ const Header: FC<HeaderProps> = ({
                       Resume
                     </Button>
                   )}
-                  <Button onClick={() => window.open('mailto:YOUR_EMAIL')}>
-                    Contact
-                  </Button>
+                  <Button onClick={() => router.push('auth')}>Login</Button>
                 </div>
               )}
             </Popover.Panel>
@@ -123,17 +175,17 @@ const Header: FC<HeaderProps> = ({
         </h1>
         {!isBlog ? (
           <div className="flex">
-            <Button onClick={handleWorkScroll}>Work</Button>
             <Button onClick={handleAboutScroll}>About</Button>
+
+            {renderPopup('Courses', coursesSections)}
+
             {showBlog && (
               <Button onClick={() => router.push('/blog')}>Blog</Button>
             )}
             {showResume && (
               <Button onClick={() => router.push('/resume')}>Resume</Button>
             )}
-            <Button onClick={() => window.open('mailto:YOUR_EMAIL')}>
-              Contact
-            </Button>
+            <Button onClick={() => router.push('auth')}>Login</Button>
             {mounted && theme && data.darkMode && (
               <Button
                 onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
@@ -149,15 +201,16 @@ const Header: FC<HeaderProps> = ({
         ) : (
           <div className="flex">
             <Button onClick={() => router.push('/')}>Home</Button>
+
+            {renderPopup('Courses', coursesSections)}
+
             {showBlog && (
               <Button onClick={() => router.push('/blog')}>Blog</Button>
             )}
             {showResume && (
               <Button onClick={() => router.push('/resume')}>Resume</Button>
             )}
-            <Button onClick={() => window.open('mailto:YOUR_EMAIL')}>
-              Contact
-            </Button>
+            <Button onClick={() => router.push('auth')}>Login</Button>
             {mounted && theme && data.darkMode && (
               <Button
                 onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}

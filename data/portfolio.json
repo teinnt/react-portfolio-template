@@ -1,9 +1,9 @@
 {
-  "name": "YOUR_NAME",
+  "name": "Hikari",
   "headerTaglineOne": "Hello 👋",
-  "headerTaglineTwo": "I'm YOUR_FULL_NAME - YOUR_PERSONALITY",
-  "headerTaglineThree": "YOUR_TITLE",
-  "headerTaglineFour": " based in YOUR_LOCATION.",
+  "headerTaglineTwo": "I'm Hikari - Ánh sáng",
+  "headerTaglineThree": "dẫn bạn từ tâm lý đến tâm linh",
+  "headerTaglineFour": "",
   "showCursor": true,
   "showBlog": true,
   "darkMode": true,
@@ -74,26 +74,30 @@
   "services": [
     {
       "id": "1",
-      "title": "Art Direction",
-      "description": "We help with the creation and development of online advertising ideas, with particular focus on their visual appearance."
+      "title": "Love",
+      "description": "We help with the creation and development of online advertising ideas, with particular focus on their visual appearance.",
+      "imageUrl":"/images/love.png"
     },
     {
       "id": "2",
-      "title": "Branding",
-      "description": "We design key brand elements such as the logo, color scheme, typography, and other design components that makes your brand stand out from competitors."
+      "title": "Money",
+      "description": "We design key brand elements such as the logo, color scheme, typography, and other design components that makes your brand stand out from competitors.",
+      "imageUrl":"/images/money.png"
     },
     {
       "id": "3",
-      "title": "Web Design",
-      "description": "We build and optimize your online presence.  Website is the digital entry point into your business and a powerful revenue channel."
+      "title": "Mental Health",
+      "description": "We build and optimize your online presence.  Website is the digital entry point into your business and a powerful revenue channel.",
+      "imageUrl":"/images/mental-health.png"
     },
     {
       "id": "4",
-      "title": "3D Design",
-      "description": "We combine creative design and technical skills to build striking 3D visualisations that bring your project to life."
+      "title": "Physical Health",
+      "description": "We combine creative design and technical skills to build striking 3D visualisations that bring your project to life.",
+      "imageUrl":"/images/physical-health.png"
     }
   ],
-  "aboutpara": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+  "aboutpara": "Xin chào! Tôi là Hikari - Ánh sáng dẫn bạn từ tâm lý đến tâm linh. Tôi sẽ đồng hành cùng bạn tìm kiếm sự cân bằng và hài hòa trong các khía cạnh của cuộc sống!",
   "resume": {
     "tagline": "👋  I'm a software engineer, product designer.",
     "description": "I have delivered world-class user experiences to millions of people. Well-versed with React, Javascript, and most of the Web frameworks.",
