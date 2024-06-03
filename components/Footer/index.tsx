@@ -1,35 +1,18 @@
 import React from 'react'
-import Socials from '../Socials'
-import Link from 'next/link'
-import Button from '../Button'
 
 const Footer: React.FC = () => {
   return (
-    <>
-      <div className="mt-5 laptop:mt-40 p-2 laptop:p-0">
-        <div>
-          <h1 className="text-2xl text-bold">Contact.</h1>
-          <div className="mt-10">
-            <h1 className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl text-bold">
-              LET'S WORK
-            </h1>
-            <h1 className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl text-bold">
-              TOGETHER
-            </h1>
-            <Button type="primary">Schedule a call</Button>
-            <div className="mt-10">
-              <Socials />
-            </div>
-          </div>
-        </div>
-      </div>
-      <h1 className="text-sm text-bold mt-2 laptop:mt-10 p-2 laptop:p-0">
-        Made With ❤ by{' '}
-        <Link href="http://XXX">
-          <a className="underline underline-offset-1">YOUR_NAME</a>
-        </Link>
-      </h1>
-    </>
+    <div style={{ backgroundColor: 'red' }}>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3926.143594884138!2d106.0203670750345!3d10.250000689868518!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2snz!4v1717392279811!5m2!1sen!2snz"
+        width="600"
+        height="450"
+        style={{ border: 0, width: '100%' }}
+        allowFullScreen
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
   )
 }
 
