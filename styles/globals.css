@@ -3,9 +3,17 @@
 @tailwind components;
 @tailwind utilities;
 @import './markdown.css';
+@import './embla.css';
+@import './sandbox.css';
+@import './base.css';
+
+@font-face {
+  font-family: "MulledWineSeason";
+  src: url("../public/fonts/MulledWineSeason-Medium.otf");
+}
 
 * {
-  font-family: 'Hind';
+  font-family: 'MulledWineSeason';
 }
 
 body {
@@ -59,8 +67,8 @@ body {
   border-radius: inherit;
 }
 
-/* 
-* Prevents issues when the parent creates a 
+/*
+* Prevents issues when the parent creates a
 * stacking context. (For example, using the transform
 * property )
 */
