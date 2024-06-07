@@ -98,11 +98,11 @@ const Resume = () => {
                     </div>
                   )}
 
-                  {resume.frameworks && (
+                  {resume.applications && (
                     <div className="mt-2 mob:mt-5">
-                      <h2 className="text-lg">Frameworks</h2>
+                      <h2 className="text-lg">Applications</h2>
                       <ul className="list-disc">
-                        {resume.frameworks.map((framework, index) => (
+                        {resume.applications.map((framework, index) => (
                           <li key={index} className="ml-5 py-2">
                             {framework}
                           </li>

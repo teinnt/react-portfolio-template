@@ -1,9 +1,9 @@
 {
-  "name": "YOUR_NAME",
+  "name": "Khai",
   "headerTaglineOne": "Hello 👋",
-  "headerTaglineTwo": "I'm YOUR_FULL_NAME - YOUR_PERSONALITY",
-  "headerTaglineThree": "YOUR_TITLE",
-  "headerTaglineFour": " based in YOUR_LOCATION.",
+  "headerTaglineTwo": "I'm Nguyen Dinh Khai",
+  "headerTaglineThree": "Chemical Engineer",
+  "headerTaglineFour": " based in Ho Chi Minh City.",
   "showCursor": true,
   "showBlog": true,
   "darkMode": true,
@@ -12,114 +12,94 @@
     {
       "id": "1",
       "title": "Github",
-      "link": "https://github.com/YOUR_GITHUB_NAME"
+      "link": "https://github.com/Khaiqwerty"
     },
     {
       "id": "2",
       "title": "LinkedIn",
-      "link": "https://www.linkedin.com/in/YOUR_LINKED_IN/"
+      "link": "https://www.linkedin.com/in/kh%E1%BA%A3i-nguy%E1%BB%85n-%C4%91%C3%ACnh-898075295/"
     },
     {
-      "id": "3",
-      "title": "Twitter",
-      "link": "https://twitter.com/YOUR_TWITTER_NAME"
+      "id": "4",
+      "title": "Facebook",
+      "link": "https://www.facebook.com/khai.ng04"
     },
-    { "id": "4", "title": "Blog", "link": "YOUR_BLOG_LINK" },
-    { "id": "5", "title": "Email", "link": "mailto:YOUR_EMAIL" }
+    { "id": "5", "title": "Email", "link": "mailto:nguyendinhkhai04@gmail.com" }
   ],
   "projects": [
     {
       "id": "1",
-      "title": "Project One Test",
-      "description": "Web Design",
-      "imageSrc": "https://images.unsplash.com/photo-1487837647815-bbc1f30cd0d2?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Njl8fHBhc3RlbHxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=400&q=60",
-      "url": "http://localhost:3000"
+      "title": "Green World",
+      "description": "Replacing Plastic Straws with Eco-Friendly Alternatives",
+      "imageSrc": "/images/green-world.png",
+      "url": "https://www.facebook.com/people/GreenWorld/100071027858116/"
     },
     {
       "id": "2",
-      "title": "Project Two",
-      "description": "Web Development",
-      "imageSrc": "https://images.unsplash.com/photo-1605153864431-a2795a1b2f95?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXwyNTY3ODl8fGVufDB8fHw%3D&auto=format&fit=crop&w=400&q=60",
-      "url": "http://localhost:3000"
-    },
-    {
-      "id": "3",
-      "title": "Project Three",
-      "description": "Design",
-      "imageSrc": "https://images.unsplash.com/photo-1504083898675-c896ecdae86e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjJ8fHBhc3RlbHxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=400&q=60",
-      "url": "http://localhost:3000"
-    },
-    {
-      "id": "4",
-      "title": "Project Four",
-      "description": "Marketing",
-      "imageSrc": "https://images.unsplash.com/photo-1492171983775-a51717616c0d?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8NjB8fHBhc3RlbHxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=400&q=60",
-      "url": "http://localhost:3000"
-    },
-    {
-      "id": "5",
-      "title": "Project Five",
-      "description": "Development",
-      "imageSrc": "https://images.unsplash.com/photo-1534239143101-1b1c627395c5?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8NzZ8fHBhc3RlbHxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=400&q=60",
-      "url": "http://localhost:3000"
-    },
-    {
-      "id": "6",
-      "title": "Project Six",
-      "description": "Design & Development",
-      "imageSrc": "https://images.unsplash.com/photo-1517479149777-5f3b1511d5ad?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTAyfHxwYXN0ZWx8ZW58MHx8MHw%3D&auto=format&fit=crop&w=400&q=60",
-      "url": "http://localhost:3000"
+      "title": "Extract Tannin",
+      "description": "Extract tannin from banana peel (Antioxidants)",
+      "imageSrc": "/images/extract-tannin.png",
+      "url": "https://s.net.vn/2Btw"
     }
   ],
   "services": [
     {
       "id": "1",
-      "title": "Art Direction",
-      "description": "We help with the creation and development of online advertising ideas, with particular focus on their visual appearance."
+      "title": "Reading Wuxia",
+      "description": "We help with the creation and development of online advertising ideas, with particular focus on their visual appearance.",
+      "srcImage": "/images/wuxia.png"
     },
     {
       "id": "2",
-      "title": "Branding",
-      "description": "We design key brand elements such as the logo, color scheme, typography, and other design components that makes your brand stand out from competitors."
+      "title": "League of Legends",
+      "description": "We design key brand elements such as the logo, color scheme, typography, and other design components that makes your brand stand out from competitors.",
+      "srcImage": "/images/lol.png"
     },
     {
       "id": "3",
-      "title": "Web Design",
-      "description": "We build and optimize your online presence.  Website is the digital entry point into your business and a powerful revenue channel."
-    },
-    {
-      "id": "4",
-      "title": "3D Design",
-      "description": "We combine creative design and technical skills to build striking 3D visualisations that bring your project to life."
+      "title": "Teamfight Tactics",
+      "description": "We build and optimize your online presence.  Website is the digital entry point into your business and a powerful revenue channel.",
+      "srcImage": "/images/teamfight-tactics.png"
     }
   ],
-  "aboutpara": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+  "aboutpara": "I'm Nguyễn Đình Khải, a graduate from Ho Chi Minh City University of Technology. I enjoy reading, exploring new things, and gaming. I have a special passion for technology and constantly strive to learn and grow.",
   "resume": {
-    "tagline": "👋  I'm a software engineer, product designer.",
-    "description": "I have delivered world-class user experiences to millions of people. Well-versed with React, Javascript, and most of the Web frameworks.",
+    "tagline": "👋 I'm a Chemical Engineer - major in Control Engineering, and a Teacher.",
+    "description": "I am loving what I do.",
     "experiences": [
       {
         "id": "1",
-        "dates": "March 2022 - Present",
-        "type": "Full Time",
-        "position": "Frontend Engineer at X",
-        "bullets": "Bullet One, Bullet Two"
+        "dates": "2023 - Present",
+        "type": "Full Time, Part Time",
+        "position": "Insurance Consultant at Generali",
+        "bullets": "Life insurance consulting for young people (18-25 years old)"
       },
       {
-        "id": "d495c23b-4f65-479a-9b8a-cfbc1c089725",
-        "dates": "July 2020 - March 2022",
-        "type": "Full Time",
-        "position": "Frontend Engineer at X",
-        "bullets": "Worked on the frontend of a React application, Worked on the frontend of a React application"
+        "id": "2",
+        "dates": "2020 - Present",
+        "type": "Part Time",
+        "position": "Teacher",
+        "bullets": "Graduation Final Exams Preparation before University for grade 12th student"
+      },
+      {
+        "id": "3",
+        "dates": "2019 - 2022",
+        "type": "Part Time",
+        "position": "Math - Physics - Chemistry Teacher",
+        "bullets": "Teaching 1:1 with student from grade 9th to 12th"
       }
     ],
     "education": {
-      "universityName": "University X",
-      "universityDate": "2016-2020",
-      "universityPara": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
+      "universityName": "Ho Chi Minh City University of Technology (Dai Hoc Bach Khoa)",
+      "universityDate": "2019 - now",
+      "universityPara": "The leading university in engineering in Southern Vietnam, headquartered in Ho Chi Minh City, Vietnam."
     },
-    "languages": ["Javascript", "HTML5", "CSS", "Python", "Go"],
-    "frameworks": ["React", "Typescript", "NodeJs"],
-    "others": ["Figma", "AdobeXD", "AWS"]
+    "languages": ["Vietnamese", "English"],
+    "applications": ["AutoCAD", "TIA PORTAL", "MATLAB"],
+    "others": [
+      "Top 10 of University Presentation Contest",
+      "Best Student in Grade 12th - Highest GPA",
+      "Leader of more than 10 team projects in university (teamwork)"
+    ]
   }
 }
